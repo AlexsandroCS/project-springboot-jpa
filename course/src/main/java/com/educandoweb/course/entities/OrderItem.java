@@ -69,9 +69,12 @@ public class OrderItem implements Serializable {
         if (!(o instanceof OrderItem orderItem)) return false;
         return Objects.equals(id, orderItem.id);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public Double getSubTotal(){
+        return price * quantity;
     }
 }
